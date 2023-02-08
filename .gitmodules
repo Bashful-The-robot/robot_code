@@ -1,0 +1,3 @@
+[submodule "SLAM"]
+	path = SLAM
+	url = https://github.com/Bashful-The-robot/SLAM
