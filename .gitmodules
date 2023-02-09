@@ -4,3 +4,6 @@
 [submodule "Localisation"]
 	path = Localisation
 	url = https://github.com/Bashful-The-robot/Localisation
+[submodule "Arm"]
+	path = Arm
+	url = https://github.com/Bashful-The-robot/Arm
