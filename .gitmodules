@@ -1,3 +1,6 @@
 [submodule "SLAM"]
 	path = SLAM
 	url = https://github.com/Bashful-The-robot/SLAM
+[submodule "Localisation"]
+	path = Localisation
+	url = https://github.com/Bashful-The-robot/Localisation
