@@ -1,0 +1,9 @@
+<launch>
+
+ <node pkg="odometry" type="odometry.py" name="odometry"/>
+
+ <node pkg="odometry" type="pi_controller.py" name="pi_controller"/>
+
+ <node pkg="odometry" type="transform_odom_camera.py" name="transform_odom_camera"/>
+
+</launch>
