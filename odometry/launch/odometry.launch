@@ -1,0 +1,31 @@
+<launch>
+ <include file="$(find robp_phidgets)/launch/phidgets.launch">
+ </include> 
+
+ <node pkg="tf2_ros" type="static_transform_publisher" name="map_odom" args="0 0 0 0 0 0 map odom" output="screen"/>
+
+ <include file="$(find usb_cam)/launch/usb_cam.launch">
+ </include> 
+
+ <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+   <arg name="filters" value="pointcloud"/>
+   <arg name="unite_imu_method" value="copy"/>
+   <arg name="gyro_fps"            value="400"/>
+   <arg name="accel_fps"           value="250"/>
+   <arg name="enable_gyro"         value="true"/>
+   <arg name="enable_accel"        value="true"/>
+ </include>
+
+ <include file="$(find joy)/launch/joy.launch">
+ </include>
+
+ <include file="$(find joy_to_twist)/launch/joy_to_twist.launch">
+ </include>
+
+ <node pkg="odometry" type="odometry.py" name="odometry"/>
+
+ <node pkg="odometry" type="pi_controller.py" name="pi_controller"/>
+
+ <node pkg="odometry" type="transform_odom_camera.py" name="transform_odom_camera"/>
+ 
+</launch>
